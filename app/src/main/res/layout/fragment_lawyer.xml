@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LawyerFragment">
+
+    <!--Lawyer-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/usage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- YOUR_VIEWS -->
+
+        <TextView
+            android:id="@+id/txtLawyer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lawyer"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtPrincipalLawyer"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Principal lawyer"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/txtLawyer">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinnerPrincipalLawyer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"  />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtResponsibleLawyer"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Responsible lawyer"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/txtPrincipalLawyer">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinnerResponsibleLawyer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"  />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtOppPrincipalLawyer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Opposite Principal Lawyer"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/txtResponsibleLawyer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/oppositePrincipalLawyerET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#041F37"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtOppRespLawyer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Opposite Responsible Lawyer"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/txtOppPrincipalLawyer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/oppositeResponsibleLawyerET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#041F37"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:id="@+id/UpcomingHaringDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toBottomOf="@+id/txtOppRespLawyer">
+
+            <TextView
+                android:id="@+id/txtup_hearing_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Upcoming Hearing Date : "
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/UpHearingDateView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/txtup_hearing_date"
+                android:gravity="center"
+                android:text="dd-mm--yyyy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

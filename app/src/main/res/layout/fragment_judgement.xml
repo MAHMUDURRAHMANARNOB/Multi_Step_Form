@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JudgementFragment">
+
+    <!--Judgement-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/employment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- YOUR_VIEWS -->
+
+        <TextView
+            android:id="@+id/txtJudgement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Judgement"
+            android:layout_marginTop="10dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtJudgeName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Judge's Name"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/txtJudgement">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/judgeNameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#041F37"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtJudgeNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Judge's MobileNo"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/txtJudgeName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/judgeMobileNoET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#041F37"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:id="@+id/JudgementDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/txtJudgeNo">
+
+            <TextView
+                android:id="@+id/txtjudgementDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="Judgement Date : "
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/judgementDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/txtjudgementDate"
+                android:gravity="center"
+                android:text="dd-mm--yyyy"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtJudgementStatus"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Judgement Status"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/JudgementDate">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"   />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtCaseSection"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Section"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/txtJudgementStatus">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinnerSections"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"   />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtCaseFacts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Facts"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/txtCaseSection">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/factsET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#041F37"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtLegalIssues"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Bullet point of Legal Issues"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/txtCaseFacts">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/bulletPointET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#041F37"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtJudgementDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Judgement Details"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toBottomOf="@+id/txtLegalIssues">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/judgementDetailsET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#041F37"
+                android:textSize="14sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
