@@ -80,4 +80,15 @@ public class MainActivity extends AppCompatActivity {
             nextButton.setText("Next");
         }
     }
+
+    public void onBackPressed(){
+        if (currentStep > 0) {
+            currentStep--;
+            viewPager.setCurrentItem(currentStep);
+            updateButtonVisibility();
+        }
+        else{
+            finish();
+        }
+    }
 }
